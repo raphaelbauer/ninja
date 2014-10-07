@@ -1,6 +1,16 @@
 Version 3.x.x
 =============
 
+* 2014-10-06 Add optional hot-reload support for `-Dninja.external.conf` external configuration for all runtime modes if *application.hotReloadExternalConfig=true* (gitblit)
+* 2014-10-06 Add automatic hot-reload support for `application.conf` in **dev** mode (gitblit)
+* 2014-10-06 Add automatic hot-reload support for language `messages` files in **dev** mode (gitblit)
+
+Version 3.3.3
+=============
+
+* 2014-09-28 Bump to guice beta5 (ra).
+* 2014-09-26 Add support for ${prettyTime(date)} to FreeMarker integration for localized relative-date formatting like "2 days ago" (gitblit)
+* 2014-09-22 Add explicit `text/plain` template engine and deprecated Result.renderRaw(String). Results.text().render(myString) is the preferred syntax.  (gitblit)
 * 2014-09-12 Add ServletContext to ContextImpl to improve 3rd-party integration (gitblit)
 * 2014-09-12 Log registered routes on startup (gitblit)
 * 2014-09-12 Added a Ninja Metrics module (gitblit)
