@@ -1,3 +1,9 @@
+Version 5.4.0
+=============
+
+ * 2016-01-16 Switch from c3p0 to HikariCP connection pool (ra) 
+
+
 Version 5.3.0
 =============
 
