@@ -54,17 +54,40 @@ Making a Ninja release
 
 2) Release to central maven repo
 
+Make sure that the sonatype open source server is properly set up in your settings.xml:
+
+    &lt;server&gt;
+        &lt;id&gt;ossrh&lt;/id&gt;
+        &lt;username&gt;USERNAME&lt;/username&gt;
+        &lt;password&gt;PASSWORD&lt;/password&gt;
+    &lt;/server&gt;
+
+Then run the following commands to deploy to sonatype:
+
 - mvn release:clean
 - mvn release:prepare
 - mvn release:perform
 - Log into http://oss.sonatype.org and release the packages
 
+
 3) Publish website
+
+Make sure to first create a github personal access token (developer settings -> personal access tokens).
+The token needs scopes notifications, repo, user:email, user:follow.
+
+Put the token into your settings.xml:
+
+    &lt;server&gt;
+        &lt;id&gt;github&lt;/id&gt;
+        &lt;password&gt;ACCESS_TOKEN&lt;/password&gt;
+    &lt;/server&gt;
+
+Then deploy the site
 
 - git checkout TAG
 - cd ninja-core
-- mvn site site:deploy
+- mvn clean -Pgithub site
 
-And back to develop:
+And switch your branch back to develop:
 
 - git checkout develop
